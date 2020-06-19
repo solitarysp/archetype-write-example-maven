@@ -18,6 +18,9 @@
             <directory></directory>
             <includes>
                 <include>.gitignore</include>
+                <include>mvnw</include>
+                <include>mvnw.cmd</include>
+                <include>.mvn/**</include>
             </includes>
         </fileSet>
     </fileSets>
