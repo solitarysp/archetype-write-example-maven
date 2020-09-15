@@ -25,7 +25,7 @@ import java.util.Collections;
 public class RestTeamplate {
 
     @Autowired
-    com.lethanh98.router.config.InterceptorDefaultRest interceptorDefaultRest;
+    InterceptorDefaultRest interceptorDefaultRest;
 
     @Bean
     @Primary
@@ -64,7 +64,7 @@ public class RestTeamplate {
 class InterceptorDefaultRest implements ClientHttpRequestInterceptor {
 
     @Autowired
-    com.lethanh98.router.config.UtilsRestTemplate utilsRestTemplate;
+    UtilsRestTemplate utilsRestTemplate;
 
     @Override
     public ClientHttpResponse intercept(HttpRequest request, byte[] body,
