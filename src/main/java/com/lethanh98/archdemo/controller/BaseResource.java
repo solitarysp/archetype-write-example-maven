@@ -27,9 +27,9 @@ public abstract class BaseResource {
 
     public BaseResource() {
         if (service == null) {
-            ThreadPoolExecutor createService = new ThreadPoolExecutor(30, 100000,
+            ThreadPoolExecutor createService = new ThreadPoolExecutor(30, 10000,
                     1L, TimeUnit.MINUTES,
-                    new LinkedBlockingQueue<>());
+                    new LinkedBlockingQueue<>(500));
             createService.setKeepAliveTime(1L, TimeUnit.MINUTES);
             createService.allowCoreThreadTimeOut(true);
             service = MoreExecutors.listeningDecorator(createService);
