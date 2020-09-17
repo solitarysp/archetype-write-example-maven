@@ -6,6 +6,7 @@ import com.lethanh98.archdemo.repo.UserRepo;
 import com.lethanh98.archdemo.reponse.UsersRP;
 import com.lethanh98.archdemo.reponse.dto.UsersDtoRp;
 import com.lethanh98.archdemo.request.PostUserRQ;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -24,6 +25,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
+@Slf4j
 @RequestMapping(value = "/api/users")
 public class UserController extends BaseResource {
 
@@ -33,6 +35,7 @@ public class UserController extends BaseResource {
     @GetMapping()
     public DeferredResult<?> get() {
         ListenableFuture<?> future = asyncExecute(() -> {
+            log.info("test");
             List<User> users = (List<User>) userRepo.findAll();
             List<UsersDtoRp> usersDTOPR = new ArrayList<>();
             users.stream().forEach(user -> {
@@ -55,6 +58,7 @@ public class UserController extends BaseResource {
                                   @PathVariable(value = "id", required = false) Integer id,
                                   @RequestHeader(value = "authen") String authen) {
         ListenableFuture<?> future = asyncExecute(() -> {
+            log.info("test");
             User user = new User();
             user.setFirstName(userRQ.getFirstName());
             user.setLastName(userRQ.getFirstName());
