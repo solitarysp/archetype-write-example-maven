@@ -1,7 +1,9 @@
 package com.lethanh98.archdemo.actuator;
 
+import org.springframework.boot.actuate.endpoint.annotation.DeleteOperation;
 import org.springframework.boot.actuate.endpoint.annotation.Endpoint;
 import org.springframework.boot.actuate.endpoint.annotation.ReadOperation;
+import org.springframework.boot.actuate.endpoint.annotation.WriteOperation;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -13,7 +15,19 @@ public class TestScrapeEndpoint {
             + "* View the watchlsit page added \n";
 
     @ReadOperation
-    public String test() {
+    public String testGet() {
+
+        return version10;
+    }
+
+    @WriteOperation
+    public String testPost() {
+
+        return version10;
+    }
+
+    @DeleteOperation
+    public String testDelete() {
 
         return version10;
     }
