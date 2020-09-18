@@ -7,7 +7,7 @@
     <groupId>com.lethanh98.archdemo</groupId>
     <artifactId>archetype-write-example</artifactId>
     <version>1.0</version>
-
+    <name>archetype-write-example</name>
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
