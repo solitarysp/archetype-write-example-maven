@@ -5,7 +5,7 @@ archetype này sử dụng để viết 1 số ví dụ hoặc viết 1 số dem
 # Hướng dẫn build app thành archetype
 
 - 1 : Tại thư mục gốc của dự án. Xóa 1 số file config của iDEA đi ( .idea, *.iml... )
-- 2 : Chạy lệnh `mvn archetype:create-from-project`
+- 2 : Chạy lệnh `mvn archetype:create-from-project -Darchetype.properties=archetype.properties`
 - 3 : Vào floder `target/generated-sources/archetype`
 - 4 : Chạy lệnh `mvn clean install`
 
