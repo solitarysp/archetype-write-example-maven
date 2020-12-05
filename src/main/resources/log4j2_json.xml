@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+
+    <Properties>
+        <Property name="logLevel">INFO</Property>
+    </Properties>
+
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <JSONLayout compact="true"
+                        eventEol="true"
+                        stacktraceAsString="true"
+                        properties="true"
+            />
+        </Console>
+    </Appenders>
+
+    <Loggers>
+        <!-- LOG everything at INFO level -->
+        <Root level="${logLevel}">
+            <AppenderRef ref="Console" />
+        </Root>
+    </Loggers>
+</Configuration>
